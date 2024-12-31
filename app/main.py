@@ -1,6 +1,6 @@
 from fasthtml.common import * # type: ignore
 from fasthtml.common import (
-    Button, Html, Head, Body, Div, Title, Titled, A, Link, Meta
+    Button, Html, Head, Body, Div, Title, Titled, A, Link, Meta, RedirectResponse
 )
 
 # for docker
@@ -16,6 +16,16 @@ def homepage():
         Head(
             Title("Fast Tools Hub"),
             Meta(name="viewport", content="width=device-width, initial-scale=1"),
+            Script("""
+                function alarmPage() {
+                        window.location.href = "/alarm";
+                   }
+                   """),
+            Script("""
+                function temperaturePage() {
+                        window.location.href = "/temperature";
+                   }
+                   """),
             Link(rel="stylesheet", href="styles.css"),
             Link(rel="icon", href="images/favicon.ico", type="image/x-icon"),
             Link(rel="icon", href="images/favicon.png", type="image/png"),
@@ -27,26 +37,30 @@ def homepage():
             ),
             Div(
                 Button(
-                    A(
-                        "Fast Alarm",
-                        href="https://alarm.fastools.xyz",
-                        title="Timer with 4 separate instances - best for cooking!",
-                    ),
+                    "Fast Alarm",
+                    onclick="alarmPage()",
+                    title="Timer with 4 separate instances - best for cooking!",
                 ),
                 cls="container",
             ),
             Div(
                 Button(
-                    A(
-                        "Temperature Converter",
-                        href="https://temperature.fastools.xyz",
-                        title="Fast and easy conversions between different temperature units.",
-                    ),
+                    "Temperature Converter",
+                    onclick="temperaturePage()",
+                    title="Fast and easy conversions between different temperature units.",
                 ),
                 cls="container",
             )
         )
     )
+
+@rt("/alarm")
+def alarm():
+    return RedirectResponse("https://alarm.fastools.xyz", status_code=302)
+
+@rt("/temperature")
+def temperature():
+    return RedirectResponse("https://temperature.fastools.xyz", status_code=302)
 
 if __name__ == '__main__':
     # Important: Use host='0.0.0.0' to make the server accessible outside the container
