@@ -41,6 +41,14 @@ def homepage():
                     title="Fast and easy conversions between different temperature units.",
                 ),
                 cls="container",
+            ),
+            Div(
+                Button(
+                    "QR Code Generator",
+                    hx_get="/qr-gen",
+                    title="Simple QR Code Generator for your webpages.",
+                ),
+                cls="container",
             )
         )
     )
@@ -52,6 +60,10 @@ def alarm():
 @rt("/temperature")
 def temperature():
     return Redirect("https://temperature.fastools.xyz")
+
+@rt("/qr-gen")
+def qr_generator():
+    return Redirect("https://qr.fastools.xyz")
 
 if __name__ == '__main__':
     # Important: Use host='0.0.0.0' to make the server accessible outside the container
