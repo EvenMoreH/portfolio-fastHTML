@@ -49,6 +49,14 @@ def homepage():
                     title="Simple QR Code Generator for your webpages.",
                 ),
                 cls="container",
+                        ),
+            Div(
+                Button(
+                    "TTRPG Distance Converter",
+                    hx_get="/distance_converter",
+                    title="Simple distance converter for your hex and square based TTRPGs.",
+                ),
+                cls="container",
             )
         )
     )
@@ -64,6 +72,10 @@ def temperature():
 @rt("/qr-gen")
 def qr_generator():
     return Redirect("https://qr.fastools.xyz")
+
+@rt("/distance_converter")
+def distance_converter():
+    return Redirect("https://distance.fastools.xyz")
 
 if __name__ == '__main__':
     # Important: Use host='0.0.0.0' to make the server accessible outside the container
