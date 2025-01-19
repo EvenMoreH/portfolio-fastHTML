@@ -60,7 +60,7 @@ def homepage():
             ),
             Div(
                 Button(
-                    "TTRPG Distance Converter",
+                    "TTRPG Dice Roller",
                     hx_get="/dice_roller",
                     title="Click-by-click dice roller for your TTRPGs.",
                 ),
