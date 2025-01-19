@@ -57,6 +57,14 @@ def homepage():
                     title="Simple distance converter for your hex and square based TTRPGs.",
                 ),
                 cls="container",
+            ),
+            Div(
+                Button(
+                    "TTRPG Distance Converter",
+                    hx_get="/dice_roller",
+                    title="Click-by-click dice roller for your TTRPGs.",
+                ),
+                cls="container",
             )
         )
     )
@@ -76,6 +84,10 @@ def qr_generator():
 @rt("/distance_converter")
 def distance_converter():
     return Redirect("https://distance.fastools.xyz")
+
+@rt("/dice_roller")
+def distance_converter():
+    return Redirect("https://roll.fastools.xyz")
 
 if __name__ == '__main__':
     # Important: Use host='0.0.0.0' to make the server accessible outside the container
