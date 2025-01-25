@@ -21,20 +21,23 @@ def homepage():
         Body(
             Div(
                 Div(
-                    H1("Welcome", cls="text-3xl md:text-5xl font-bold mb-4 md:p-b-var-pad-2 p-b-var-pad-1 text-center xl:text-center "),
+                    H1("Welcome", cls="text-3xl md:text-5xl font-bold mb-4 md:pb-2 pb-0.5 text-center xl:text-center "),
                     P(paragraph, cls="text-gray-200 md:text-lg text-left xl:text-center"),
                     cls="md:w-1/2 mb-8 md:mb-0"
                 ),
-                cls="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center p-t-var-pad-2 md:p-t-var-pad-3"
+                cls="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center pt-4 md:pt-3"
             ),
-            Div(cls="md:p-b-var-pad-2 xl:p-b-var-pad-3 xxl:p-b-var-pad-4"),
+            Div(cls="pb-[1vw] md:pb-[2vw]"),
             Div(
                 Div(
                     H3("Fast Alarm",
                         cls="grid-title"),
-                    Img(src="images/fastalarm.png",
-                        type="image/png",
-                        alt="fastalarm", cls="hidden lg:block max-w-64 xl:max-w-72 h-auto mx-auto pb-0.5"),
+                    Div(
+                        Img(src="images/fastalarm.png",
+                            type="image/png",
+                            alt="fastalarm", cls="img"),
+                        cls="img-container"
+                    ),
                     P("Timer with 4 separate instances - best for cooking!",
                         cls="text-gray-200"),
                     hx_get="/alarm",
@@ -43,9 +46,12 @@ def homepage():
                 Div(
                     H3("Temperature Converter",
                         cls="grid-title"),
-                    Img(src="images/tempconverter.png",
-                        type="image/png",
-                        alt="tempconverter", cls="hidden lg:block max-w-64 xl:max-w-72 h-auto mx-auto pb-0.5"),
+                    Div(
+                        Img(src="images/tempconverter.png",
+                            type="image/png",
+                            alt="tempconverter", cls="img"),
+                        cls="img-container"
+                        ),
                     P("Fast and easy conversions between different temperature units",
                         cls="text-gray-200"),
                     hx_get="/temperature",
@@ -54,9 +60,12 @@ def homepage():
                 Div(
                     H3("QR Code Generator",
                         cls="grid-title"),
-                    Img(src="images/qrcodegen.png",
-                        type="image/png",
-                        alt="qrcodegen", cls="hidden lg:block max-w-64 xl:max-w-72 h-auto mx-auto pb-0.5"),
+                    Div(
+                        Img(src="images/qrcodegen.png",
+                            type="image/png",
+                            alt="qrcodegen", cls="img"),
+                        cls="img-container"
+                        ),
                     P("Simple QR Code Generator for your webpages",
                         cls="text-gray-200"),
                     hx_get="/qr-gen",
@@ -65,9 +74,12 @@ def homepage():
                 Div(
                     H3("TTRPG Distance Converter",
                         cls="grid-title"),
-                    Img(src="images/ttrpgdistance.png",
-                        type="image/png",
-                        alt="ttrpgdistance", cls="hidden lg:block max-w-64 xl:max-w-72 h-auto mx-auto pb-0.5"),
+                    Div(
+                        Img(src="images/ttrpgdistance.png",
+                            type="image/png",
+                            alt="ttrpgdistance", cls="img"),
+                        cls="img-container"
+                        ),
                     P("Simple distance converter for your hex and square based TTRPGs",
                         cls="text-gray-200"),
                     hx_get="/distance_converter",
@@ -76,17 +88,20 @@ def homepage():
                 Div(
                     H3("Dice Roller",
                         cls="grid-title"),
-                    Img(src="images/diceroller.png",
-                        type="image/png",
-                        alt="diceroller", cls="hidden lg:block max-w-64 xl:max-w-72 h-auto mx-auto pb-0.5"),
-                    P("Click-by-click dice roller for your TTRPGs",
+                    Div(
+                        Img(src="images/diceroller.png",
+                            type="image/png",
+                            alt="diceroller", cls="img"),
+                        cls="img-container"
+                        ),
+                        P("Click-by-click dice roller for your TTRPGs",
                         cls="text-gray-200"),
                     hx_get="/dice_roller",
                     cls="grid-tile",
                 ),
                 cls="container mx-auto px-3 md:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8"
             ),
-            Div(cls="p-t-var-pad-3"),
+            Div(cls="pt-[3vw]"),
             Footer(
                 Div(
                     A("by EvenMoreH", href="https://github.com/EvenMoreH", cls="text-gray-350"),

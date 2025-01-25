@@ -3,9 +3,17 @@
 @tailwind utilities;
 
 .grid-tile {
-    @apply bg-dark-theme-lightgray rounded-xl md:p-6 p-1 hover:scale-125 hover:bg-neutral-500 transition-all duration-300 text-center
+    @apply bg-dark-theme-lightgray rounded-xl md:p-4 p-1 hover:scale-125 hover:bg-neutral-500 hover:z-50 transition-all duration-300 text-center
 }
 
 .grid-title {
     @apply xl:text-2xl text-xl font-bold md:mb-4 mb-2 text-gray-300
+}
+
+.img {
+    @apply hidden lg:block mx-auto max-w-64 xl:max-w-72 w-auto pb-0.5
+}
+
+.img-container {
+    @apply max-h-[13vh] overflow-hidden
 }
