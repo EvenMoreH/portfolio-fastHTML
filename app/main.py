@@ -94,7 +94,7 @@ def homepage():
                 ),
                 cls="bg-rose-950/20 py-3 md:py-5 fixed bottom-0 w-full"
             ),
-            cls="bg-stone-950/95 text-gray-100"
+            cls="bg-stone-950/95 text-gray-100 h-full"
         )
     )
 
