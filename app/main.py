@@ -21,13 +21,13 @@ def homepage():
         Body(
             Div(
                 Div(
-                    H1("Welcome", cls="text-3xl md:text-5xl font-bold mb-4 md:p-b-var-pad-2 p-b-var-pad-1"),
-                    P(paragraph, cls="text-gray-200 md:text-lg"),
-                    cls="md:w-1/2 text-center md:text-center mb-8 md:mb-0"
+                    H1("Welcome", cls="text-3xl md:text-5xl font-bold mb-4 md:p-b-var-pad-2 p-b-var-pad-1 text-center xl:text-center "),
+                    P(paragraph, cls="text-gray-200 md:text-lg text-left xl:text-center"),
+                    cls="md:w-1/2 mb-8 md:mb-0"
                 ),
                 cls="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center p-t-var-pad-2 md:p-t-var-pad-3"
             ),
-            Div(cls="p-b-var-pad-1 md:p-b-var-pad-2 xl:p-b-var-pad-3 xxl:p-b-var-pad-4"),
+            Div(cls="md:p-b-var-pad-2 xl:p-b-var-pad-3 xxl:p-b-var-pad-4"),
             Div(
                 Div(
                     H3("Fast Alarm",
@@ -92,9 +92,9 @@ def homepage():
                     A("by EvenMoreH", href="https://github.com/EvenMoreH", cls="text-gray-350"),
                     cls="container mx-auto px-6 text-center hover:scale-125 transition-all duration-200"
                 ),
-                cls="bg-rose-950/20 py-3 md:py-5 fixed bottom-0 w-full"
+                cls="bg-dark-theme-lightgray py-2 md:py-3 fixed bottom-0 w-full"
             ),
-            cls="bg-stone-950/95 text-gray-100 h-full"
+            cls="bg-dark-theme-gray text-gray-100 h-full"
         )
     )
 

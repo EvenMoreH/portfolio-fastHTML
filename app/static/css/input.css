@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 .grid-tile {
-    @apply bg-rose-950/20 rounded-xl md:p-6 p-2 hover:scale-125 hover:bg-rose-950/90 transition-all duration-300 text-center
+    @apply bg-dark-theme-lightgray rounded-xl md:p-6 p-1 hover:scale-125 hover:bg-neutral-500 transition-all duration-300 text-center
 }
 
 .grid-title {
-    @apply xl:text-2xl text-xl font-bold mb-4 text-gray-300
+    @apply xl:text-2xl text-xl font-bold md:mb-4 mb-2 text-gray-300
 }

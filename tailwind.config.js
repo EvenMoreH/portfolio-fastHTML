@@ -6,6 +6,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        "dark-theme-gray": {
+          DEFAULT: "#1E1E1E",
+        },
+        "dark-theme-lightgray": {
+          DEFAULT: "#4A4A4A",
+        },
+      },
       screens: {
         "xxl" : {"min" : "1921px"}
       },
@@ -52,6 +60,7 @@ module.exports = {
         "t-var-pad-19": "19vw 0 0 0",
         "t-var-pad-20": "20vw 0 0 0",        // 20% of viewport height
         // bottom
+        "b-var-pad-0.5": "0 0 0.5vw 0",
         "b-var-pad-1": "0 0 1vw 0",         // 1% of viewport height (exampade)
         "b-var-pad-2": "0 0 2vw 0",
         "b-var-pad-3": "0 0 3vw 0",
