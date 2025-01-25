@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        "xxl" : {"min" : "1921px"}
+      },
       padding: {
         "var-pad-1": "1vw",         // 1% of viewport height (exampade)
         "var-pad-2": "2vw",
@@ -116,6 +119,6 @@ module.exports = {
   },
   plugins: [],
   breakpoints: {
-    xl: 'min-width: 1921px',
+    '3xl' : 'min-width: 1921px',
   },
 }
