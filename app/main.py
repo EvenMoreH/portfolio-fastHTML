@@ -1,13 +1,10 @@
 from fasthtml.common import * # type: ignore
-from fasthtml.common import (
-    Button, Html, Head, Body, Div, Title, Titled, Link, Meta, Script, Redirect
-)
 
 # for Docker
-app, rt = fast_app(static_path="static") # type: ignore
+# app, rt = fast_app(static_path="static") # type: ignore
 
 # for local
-# app, rt = fast_app(static_path="app/static") # type: ignore
+app, rt = fast_app(static_path="app/static") # type: ignore
 
 
 @rt("/")
@@ -17,55 +14,77 @@ def homepage():
             Title("Fast Tools Hub"),
             Meta(name="viewport", content="width=device-width, initial-scale=1"),
             Script(src="https://unpkg.com/htmx.org"),
-            Link(rel="stylesheet", href="styles.css"),
+            Link(rel="stylesheet", href="css/tailwind.css"),
             Link(rel="icon", href="images/favicon.ico", type="image/x-icon"),
             Link(rel="icon", href="images/favicon.png", type="image/png"),
         ),
         Body(
             Div(
-                Titled("Select an app", cls="title"),
-                cls="container",
+                Div(
+                    H1("Welcome", cls="text-5xl font-bold mb-4 md:p-b-var-pad-2 p-b-var-pad-1"),
+                    P("New Page!", cls="text-gray-200 text-lg"),
+                    cls="md:w-1/2 text-center md:text-center mb-8 md:mb-0"
+                ),
+                cls="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center p-t-var-pad-2 md:p-t-var-pad-3"
             ),
+            Div(cls="p-b-var-pad-4 lg:p-b-var-pad-2"),
             Div(
-                Button(
-                    "Fast Alarm",
+                Div(
+                    H3("Fast Alarm",
+                        cls="md:text-2xl text-xl font-bold mb-4 text-gray-300"),
+                    Img(src="images/fastalarm.png", type="image/png", alt="fastalarm", cls="hidden lg:block max-w-48 h-auto mx-auto"),
+                    P("Timer with 4 separate instances - best for cooking!",
+                        cls="text-gray-200"),
                     hx_get="/alarm",
-                    title="Timer with 4 separate instances - best for cooking!",
+                    cls="bg-rose-950/20 rounded-xl md:p-6 p-2 hover:scale-125 hover:bg-rose-950/90 transition-all duration-300 text-center ",
                 ),
-                cls="container",
-            ),
-            Div(
-                Button(
-                    "Temperature Converter",
+                Div(
+                    H3("Temperature Converter",
+                        cls="md:text-2xl text-xl font-bold mb-4 text-gray-300"),
+                    Img(src="images/tempconverter.png", type="image/png", alt="tempconverter", cls="hidden lg:block max-w-48 h-auto mx-auto"),
+                    P("Fast and easy conversions between different temperature units.",
+                        cls="text-gray-200"),
                     hx_get="/temperature",
-                    title="Fast and easy conversions between different temperature units.",
+                    cls="bg-rose-950/20 rounded-xl md:p-6 p-2 hover:scale-125 hover:bg-rose-950/90 transition-all duration-300 text-center",
                 ),
-                cls="container",
-            ),
-            Div(
-                Button(
-                    "QR Code Generator",
+                Div(
+                    H3("QR Code Generator",
+                        cls="md:text-2xl text-xl font-bold mb-4 text-gray-300"),
+                    Img(src="images/qrcodegen.png", type="image/png", alt="qrcodegen", cls="hidden lg:block max-w-48 h-auto mx-auto"),
+                    P("Simple QR Code Generator for your webpages.",
+                        cls="text-gray-200"),
                     hx_get="/qr-gen",
-                    title="Simple QR Code Generator for your webpages.",
+                    cls="bg-rose-950/20 rounded-xl md:p-6 p-2 hover:scale-125 hover:bg-rose-950/90 transition-all duration-300 text-center",
                 ),
-                cls="container",
-                        ),
-            Div(
-                Button(
-                    "TTRPG Distance Converter",
+                Div(
+                    H3("TTRPG Distance Converter",
+                        cls="md:text-2xl text-xl font-bold mb-4 text-gray-300"),
+                    Img(src="images/ttrpgdistance.png", type="image/png", alt="ttrpgdistance", cls="hidden lg:block max-w-48 h-auto mx-auto"),
+                    P("Simple distance converter for your hex and square based TTRPGs",
+                        cls="text-gray-200"),
                     hx_get="/distance_converter",
-                    title="Simple distance converter for your hex and square based TTRPGs.",
+                    cls="bg-rose-950/20 rounded-xl md:p-6 p-2 hover:scale-125 hover:bg-rose-950/90 transition-all duration-300 text-center",
                 ),
-                cls="container",
-            ),
-            Div(
-                Button(
-                    "TTRPG Dice Roller",
+                Div(
+                    H3("Dice Roller",
+                        cls="md:text-2xl text-xl font-bold mb-4 text-gray-300"),
+                    Img(src="images/diceroller.png", type="image/png", alt="diceroller", cls="hidden lg:block max-w-48 h-auto mx-auto"),
+                    P("Click-by-click dice roller for your TTRPGs",
+                        cls="text-gray-200"),
                     hx_get="/dice_roller",
-                    title="Click-by-click dice roller for your TTRPGs.",
+                    cls="bg-rose-950/20 rounded-xl md:p-6 p-2 hover:scale-125 hover:bg-rose-950/90 transition-all duration-300 text-center",
                 ),
-                cls="container",
-            )
+                cls="container mx-auto px-3 md:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8"
+            ),
+            Div(cls="p-t-var-pad-3"),
+            Footer(
+                Div(
+                    A("by EvenMoreH", href="https://github.com/EvenMoreH", cls="text-grey-400"),
+                    cls="container mx-auto px-6 text-center"
+                ),
+                cls="bg-rose-950/20 md:py-6 py-3 fixed bottom-0 w-full"
+            ),
+            cls="bg-stone-950/95 text-gray-100"
         )
     )
 
