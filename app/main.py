@@ -30,15 +30,15 @@ def homepage():
             Div(cls="pb-[1vw] md:pb-[2vw]"),
             Div(
                 Div(
-                    H3("Fast Alarm",
+                    H3("Alarm!",
                         cls="grid-title"),
                     Div(
-                        Img(src="images/fastalarm.png",
+                        Img(src="images/free-clock-sq.ico",
                             type="image/png",
                             alt="fastalarm", cls="img"),
                         cls="img-container"
                     ),
-                    P("Timer with 4 separate instances - best for cooking!",
+                    P(description_alarm,
                         cls="text-gray-200"),
                     hx_get="/alarm",
                     cls="grid-tile",
@@ -47,12 +47,12 @@ def homepage():
                     H3("Temperature Converter",
                         cls="grid-title"),
                     Div(
-                        Img(src="images/tempconverter.png",
+                        Img(src="images/temperature-converter-sq2.ico",
                             type="image/png",
                             alt="tempconverter", cls="img"),
                         cls="img-container"
                         ),
-                    P("Fast and easy conversions between different temperature units",
+                    P(description_temperature,
                         cls="text-gray-200"),
                     hx_get="/temperature",
                     cls="grid-tile",
@@ -61,12 +61,12 @@ def homepage():
                     H3("QR Code Generator",
                         cls="grid-title"),
                     Div(
-                        Img(src="images/qrcodegen.png",
+                        Img(src="images/qrcode.ico",
                             type="image/png",
                             alt="qrcodegen", cls="img"),
                         cls="img-container"
                         ),
-                    P("Simple QR Code Generator for your webpages",
+                    P(description_qr,
                         cls="text-gray-200"),
                     hx_get="/qr-gen",
                     cls="grid-tile",
@@ -75,12 +75,12 @@ def homepage():
                     H3("TTRPG Distance Converter",
                         cls="grid-title"),
                     Div(
-                        Img(src="images/ttrpgdistance.png",
+                        Img(src="images/running-distance.ico",
                             type="image/png",
                             alt="ttrpgdistance", cls="img"),
                         cls="img-container"
                         ),
-                    P("Simple distance converter for your hex and square based TTRPGs",
+                    P(description_distance,
                         cls="text-gray-200"),
                     hx_get="/distance_converter",
                     cls="grid-tile",
@@ -89,17 +89,31 @@ def homepage():
                     H3("Dice Roller",
                         cls="grid-title"),
                     Div(
-                        Img(src="images/diceroller.png",
+                        Img(src="images/favicon-roller2.ico",
                             type="image/png",
                             alt="diceroller", cls="img"),
                         cls="img-container"
                         ),
-                        P("Click-by-click dice roller for your TTRPGs",
+                        P(description_dice,
                         cls="text-gray-200"),
                     hx_get="/dice_roller",
                     cls="grid-tile",
                 ),
-                cls="container mx-auto px-3 md:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8"
+                Div(
+                    H3("Color Converter",
+                        cls="grid-title"),
+                    Div(
+                        Img(src="images/splat1-noBG.ico",
+                            type="image/png",
+                            alt="color-converter", cls="img"),
+                        cls="img-container"
+                        ),
+                        P(description_color,
+                        cls="text-gray-200"),
+                    hx_get="/color_converter",
+                    cls="grid-tile",
+                ),
+                cls="container mx-auto px-3 md:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8 max-w-[1200px]"
             ),
             Div(cls="pt-[3vw]"),
             Footer(
@@ -130,13 +144,37 @@ def distance_converter():
     return Redirect("https://distance.fastools.xyz")
 
 @rt("/dice_roller")
-def distance_converter():
+def dice_roller():
     return Redirect("https://roll.fastools.xyz")
+
+@rt("/color_converter")
+def color_converter():
+    return Redirect("https://colors.fastools.xyz/")
 
 paragraph = """
             Discover a sleek, dynamic tool hub crafted with Tailwind CSS.
             Navigate through a grid of tiles, each being a gateway leading to a tool I am using everyday.
             """
+
+description_alarm = """
+Timer with 4 separate instances - best for cooking!
+"""
+description_temperature = """
+Fast and easy conversions between different temperature units
+"""
+description_qr = """
+Simple QR Code Generator for your webpages
+"""
+description_distance = """
+Simple distance converter for your hex and square based TTRPGs
+"""
+description_dice = """
+Click-by-click dice roller for your TTRPGs
+"""
+description_color = """
+Convert your colors between TailwindCSS, hex and RGBA
+"""
+
 
 if __name__ == '__main__':
     # Important: Use host='0.0.0.0' to make the server accessible outside the container

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .grid-tile {
-    @apply bg-dark-theme-lightgray rounded-xl md:p-4 p-1 hover:scale-125 hover:bg-neutral-500 hover:z-50 transition-all duration-300 text-center
+    @apply bg-dark-theme-lightgray rounded-xl md:p-4 p-1 hover:scale-110 hover:bg-neutral-500 hover:z-50 transition-all duration-300 text-center
 }
 
 .grid-title {
@@ -11,9 +11,9 @@
 }
 
 .img {
-    @apply hidden lg:block mx-auto max-w-64 xl:max-w-72 w-auto pb-0.5
+    @apply hidden lg:block mx-auto max-w-28 xl:max-w-36 w-auto my-2
 }
 
 .img-container {
-    @apply max-h-[13vh] overflow-hidden
+    @apply max-h-[13vh] w-full mx-auto overflow-hidden
 }
