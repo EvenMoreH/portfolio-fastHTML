@@ -149,7 +149,7 @@ def dice_roller():
 
 @rt("/color_converter")
 def color_converter():
-    return Redirect("https://colors.fastools.xyz/")
+    return Redirect("https://color.fastools.xyz/")
 
 paragraph = """
             Discover a sleek, dynamic tool hub crafted with Tailwind CSS.
